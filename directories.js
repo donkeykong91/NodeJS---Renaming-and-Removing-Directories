@@ -1,5 +1,5 @@
 var fs = require("fs");
 
-fs.renameSync("./assests/logs", "./logs");
+fs.renameSync("./assets/logs", "./logs");
 
 console.log("Directory moved");
