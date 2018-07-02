@@ -1,5 +1,12 @@
 var fs = require("fs");
 
-fs.renameSync("./assets/logs", "./logs");
+fs.readdirSync("./logs").forEach(function (fileName) {
+  fs.unlinkSync("./logs/" + fileName);
+});
 
-console.log("Directory moved");
+fs.rmdir("./logs", function (err) {
+  if (err) {
+    throw err;
+  }
+  console.log("Logs directory removed");
+});
